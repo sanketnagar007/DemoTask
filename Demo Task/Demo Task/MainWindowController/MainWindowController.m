@@ -27,7 +27,6 @@ NSString *const kAddPhotosViewTitle        = @"AddPhotosVC";
     [super windowDidLoad];
 }
 
-
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -38,9 +37,7 @@ NSString *const kAddPhotosViewTitle        = @"AddPhotosVC";
 {
     [self setupView];
     [self changeViewController:kAddPhotosView];
-    
     [windowMain makeKeyAndOrderFront:self];
-
 }
 
 -(void)setupView
@@ -57,9 +54,9 @@ NSString *const kAddPhotosViewTitle        = @"AddPhotosVC";
     frameMainWin.size.width = visibleScreenSize.size.width - 2 *padd_x;
     frameMainWin.size.height = visibleScreenSize.size.height - 2 *padd_y;
     
-    if (frameMainWin.size.width < 1300)
+    if (frameMainWin.size.width < 1100)
     {
-        frameMainWin.size.width = 1300;
+        frameMainWin.size.width = 1100;
     }
     
     [self.windowMain setFrame:frameMainWin display:YES];

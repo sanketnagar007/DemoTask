@@ -2,7 +2,7 @@
 //  Constants.h
 //  Demo Task
 //
-//  Created by Sanket Nagar on 03/12/18.
+//  Created by Sanket Nagar on 04/12/18.
 //  Copyright © 2018 Sanket Nagar. All rights reserved.
 //
 
@@ -16,6 +16,11 @@ typedef NS_ENUM(NSInteger, K_IMAGE_VIEW_MODE)
     list_VIEW
 };
 
+typedef NS_ENUM(NSInteger, k_SWIPE_FLAG)
+{
+    LEFT_SWIPE = 0,
+    RIGHT_SWIPE
+};
 
 
 #define FLICKR_SAMPLE_API_KEY @"aff6d851fd7a8e47cdd3a68cf85ac8cf"

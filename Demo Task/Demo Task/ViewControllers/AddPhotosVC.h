@@ -7,11 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "IMGButton.h"
 #import "Constants.h"
 #import "JNWCollectionView.h"
 #import "MouseDownView.h"
 #import <objectiveflickr/ObjectiveFlickr.h>
+
+
+
 
 @interface AddPhotosVC : NSViewController<NSTableViewDataSource,NSTableViewDelegate,JNWCollectionViewDataSource, JNWCollectionViewGridLayoutDelegate,OFFlickrAPIRequestDelegate>
 {
@@ -22,15 +24,30 @@
    
     IBOutlet NSTextField          *line_thumbnail;
     IBOutlet NSTextField          *line_list;
-    IBOutlet IMGButton            *btnThumbnail;
-    IBOutlet IMGButton            *btnList;
+    IBOutlet NSButton            *btnThumbnail;
+    IBOutlet NSButton            *btnList;
     IBOutlet NSTextField          *middleBG;
     
     OFFlickrAPIContext *flickrContext;
     OFFlickrAPIRequest *flickrRequest;
+    IBOutlet MouseDownView *vwPreview;
+    __weak IBOutlet NSImageView *imgVwPreview;
+    
+    
+    __weak IBOutlet NSTextField *txtUserName;
+    __weak IBOutlet NSTextField *txtPassword;
+    
+    IBOutlet NSView *vwLogin;
+    __weak IBOutlet NSTextField *lblSavedMsg;
+    
 }
 
 @property (nonatomic,retain) IBOutlet NSTableView       *tblPhotos;
 @property (nonatomic, weak) IBOutlet JNWCollectionView  *customCollectionView;
+- (IBAction)btnPrevPhotoTapped:(id)sender;
+- (IBAction)btnNextPhotoTapped:(id)sender;
+- (IBAction)btnClosePreviewTapped:(id)sender;
+- (IBAction)btnSaveDetailsInKCTapped:(id)sender;
+- (IBAction)btnCloseLoginTapped:(id)sender;
 
 @end
